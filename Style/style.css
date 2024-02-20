@@ -1,0 +1,961 @@
+@import url("https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Chivo:ital,wght@1,700&display=swap");
+html,
+*,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@media only screen and (max-width: 1200px) {
+  html {
+    font-size: 14px;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  html {
+    font-size: 13px;
+  }
+}
+@media only screen and (max-width: 800px) {
+  html {
+    font-size: 12px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  html {
+    font-size: 10px;
+  }
+}
+
+.banner {
+  background-color: black;
+  height: 100vh;
+  position: relative;
+  background-repeat: none;
+  overflow: hidden;
+}
+.banner .container-md {
+  position: relative;
+  height: 100%;
+}
+.banner .container-md .banner-div {
+  position: absolute;
+  width: 380px;
+  color: #ded9d2;
+  font-family: "Chivo", sans-serif;
+  font-weight: 800;
+  font-size: 1.2rem;
+  top: 60%;
+}
+.banner .container-md .banner-div .banner-para {
+  color: #ded9d2;
+}
+.banner .container-md .banner-div .btn {
+  color: black;
+  background-color: #cdf300;
+  border-radius: 25px;
+  padding: 10px 30px;
+}
+.banner .container-md .searchbar {
+  float: right;
+  position: relative;
+  width: 60px;
+  z-index: 3;
+  width: 60px;
+  height: 60px;
+  transform: translateX(-30px);
+  transition: all 1s ease;
+  border-radius: 50%;
+}
+.banner .container-md .searchbar .icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 60px;
+  border-radius: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  cursor: pointer;
+}
+.banner .container-md .searchbar .icon::before {
+  content: "";
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 2px solid #cdf300;
+  transform: translate(-4px, -4px);
+}
+.banner .container-md .searchbar .icon::after {
+  content: "";
+  width: 12px;
+  height: 2px;
+  background-color: #cdf300;
+  position: absolute;
+  transform: translate(5px, 5px) rotate(45deg);
+}
+.banner .container-md .searchbar.active {
+  border-radius: 25px;
+  transition: all 0.5s fade;
+}
+.banner .container-md .searchbar.active #searchbox {
+  opacity: 1;
+}
+.banner .container-md .searchbar #searchbox {
+  opacity: 0;
+  position: relative;
+  width: 300px;
+  height: 60px;
+  right: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  border-bottom: 1px solid white;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+}
+@media only screen and (max-width: 400px) {
+  .banner .container-md .searchbar #searchbox {
+    width: 193px;
+    height: 40px;
+    right: 180px;
+  }
+}
+.banner .container-md .searchbar #searchbox input {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  color: white;
+}
+.banner .container-md .searchbar #searchbox input .search-query {
+  color: white;
+}
+.banner .container-md .shopingbtn {
+  float: right;
+  position: absolute;
+  text-decoration: none;
+  color: #cdf300;
+  font-size: 20px;
+  top: 12px;
+  font-weight: 600;
+  right: 10px;
+}
+.banner::after {
+  content: "";
+  top: -10rem;
+  left: -10rem;
+  width: calc(100% + 20rem);
+  height: calc(100% + 20rem);
+  z-index: 9999;
+  position: fixed;
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/5/5c/Image_gaussian_noise_example.png);
+  opacity: 0.1;
+  pointer-events: none;
+}
+.banner .innerdiv {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  background: radial-gradient(circle at top, #cdf300 -30%, black 35%);
+  background-repeat: none;
+}
+.banner .innerdiv .banner-head-left {
+  color: #cdf300;
+  font-size: 16rem;
+  position: absolute;
+  z-index: 0;
+  top: 35%;
+  left: -10px;
+  transform: translateY(-50%);
+  font-family: "Dela Gothic One", cursive;
+}
+@media only screen and (max-width: 1700px) {
+  .banner .innerdiv .banner-head-left {
+    font-size: 14rem;
+  }
+}
+@media only screen and (max-width: 1400px) {
+  .banner .innerdiv .banner-head-left {
+    font-size: 12rem;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .banner .innerdiv .banner-head-left {
+    left: 0px;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .banner .innerdiv .banner-head-left {
+    top: 45%;
+    font-size: 8rem;
+  }
+}
+.banner .innerdiv .banner-head-left-over {
+  color: transparent;
+  font-size: 16rem;
+  position: absolute;
+  top: 35%;
+  left: -10px;
+  font-family: "Dela Gothic One", cursive;
+  transform: translateY(-50%);
+  z-index: 1;
+  -webkit-text-stroke: 3px #cdf300;
+}
+@media only screen and (max-width: 1700px) {
+  .banner .innerdiv .banner-head-left-over {
+    font-size: 14rem;
+  }
+}
+@media only screen and (max-width: 1400px) {
+  .banner .innerdiv .banner-head-left-over {
+    font-size: 12rem;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .banner .innerdiv .banner-head-left-over {
+    left: 0px;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .banner .innerdiv .banner-head-left-over {
+    top: 45%;
+    font-size: 8rem;
+  }
+}
+.banner .innerdiv .banner-img {
+  position: absolute;
+  z-index: 0;
+  width: 550px;
+  height: 700px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.banner .innerdiv .banner-head-right {
+  color: #cdf300;
+  font-size: 16rem;
+  position: absolute;
+  z-index: 0;
+  bottom: 40%;
+  transform: translateY(50%);
+  right: -10px;
+  -webkit-text-stroke: 1px transparent;
+  font-family: "Dela Gothic One", cursive;
+}
+@media only screen and (max-width: 1700px) {
+  .banner .innerdiv .banner-head-right {
+    font-size: 14rem;
+  }
+}
+@media only screen and (max-width: 1400px) {
+  .banner .innerdiv .banner-head-right {
+    font-size: 12rem;
+    bottom: 50%;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .banner .innerdiv .banner-head-right {
+    bottom: 40%;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .banner .innerdiv .banner-head-right {
+    bottom: 40%;
+    font-size: 8rem;
+  }
+}
+.banner .innerdiv .banner-head-right-over {
+  color: transparent;
+  font-size: 16rem;
+  position: absolute;
+  bottom: 40%;
+  transform: translateY(50%);
+  right: -10px;
+  font-family: "Dela Gothic One", cursive;
+  z-index: 1;
+  -webkit-text-stroke: 3px #cdf300;
+}
+@media only screen and (max-width: 1700px) {
+  .banner .innerdiv .banner-head-right-over {
+    font-size: 14rem;
+  }
+}
+@media only screen and (max-width: 1400px) {
+  .banner .innerdiv .banner-head-right-over {
+    font-size: 12rem;
+    bottom: 50%;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .banner .innerdiv .banner-head-right-over {
+    bottom: 40%;
+    font-size: 8rem;
+  }
+}
+.banner .nav-bar .menu-wrap {
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+.banner .nav-bar .menu-wrap .toggler {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  opacity: 0;
+}
+.banner .nav-bar .menu-wrap .hamburger {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 60px;
+  height: 60px;
+  padding: 1rem;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.banner .nav-bar .menu-wrap .hamburger .ham {
+  position: relative;
+  width: 100%;
+  height: 2px;
+  background-color: #cdf300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.banner .nav-bar .menu-wrap .hamburger .ham::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: -10px;
+  width: 100%;
+  height: 2px;
+  background: #cdf300;
+}
+.banner .nav-bar .menu-wrap .hamburger .ham::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: 10px;
+  width: 100%;
+  height: 2px;
+  background: #cdf300;
+}
+.banner .nav-bar .menu-wrap .menu {
+  opacity: 0;
+}
+.banner .nav-bar .open-menu {
+  background-color: rgba(207, 243, 0, 0.7411764706);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  opacity: 1;
+}
+.banner .nav-bar .open-menu .hamburger .ham {
+  transform: rotate(135deg);
+  opacity: 1;
+  transition: all 0.5s;
+  background-color: black;
+}
+.banner .nav-bar .open-menu .hamburger .ham::after {
+  transform: rotate(90deg);
+  top: 0;
+  opacity: 1;
+  background-color: black;
+}
+.banner .nav-bar .open-menu .hamburger .ham::before {
+  transform: rotate(-90deg);
+  opacity: 0;
+}
+.banner .nav-bar .open-menu .menu {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 1;
+}
+.banner .nav-bar .open-menu .menu ul {
+  list-style: none;
+}
+.banner .nav-bar .open-menu .menu ul li a {
+  text-decoration: none;
+  color: black;
+  -webkit-text-stroke: 1px #ded9d2;
+  text-shadow: 3px 3px 2px #ded9d2;
+  font-family: "Dela Gothic One", cursive;
+  font-size: 3rem;
+}
+.banner .banner-flower-div .banner-flower {
+  position: absolute;
+  width: 200px;
+  top: 100px;
+  right: 50px;
+}
+@media only screen and (max-width: 400px) {
+  .banner .banner-flower-div .banner-flower {
+    width: 137px;
+    top: 37px;
+    right: 8px;
+  }
+}
+.banner .banner-flower-div .flowernum {
+  color: #ded9d2;
+  position: absolute;
+  width: 200px;
+  top: 165px;
+  right: -12px;
+  font-size: 3rem;
+  font-family: "Dela Gothic One", cursive;
+}
+@media only screen and (max-width: 400px) {
+  .banner .banner-flower-div .flowernum {
+    width: 201px;
+    top: 87px;
+    right: -98px;
+  }
+}
+
+.shopping {
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  background-color: #d9f41b;
+}
+.shopping .l-brush {
+  position: absolute;
+  bottom: 60px;
+  left: -100px;
+  transform: rotate(163deg);
+}
+@media only screen and (max-width: 400px) {
+  .shopping .l-brush {
+    width: 138px;
+    bottom: 30px;
+    left: -14px;
+  }
+}
+.shopping .r-brush {
+  position: absolute;
+  right: -100px;
+  top: 60px;
+}
+@media only screen and (max-width: 400px) {
+  .shopping .r-brush {
+    width: 138px;
+    top: 30px;
+    right: -14px;
+  }
+}
+.shopping .container .shop-inner {
+  position: absolute;
+  top: 50%;
+  width: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+@media only screen and (max-width: 400px) {
+  .shopping .container .shop-inner {
+    width: 100%;
+  }
+}
+.shopping .container .shop-inner .shop-head {
+  font-size: 6.5rem;
+  text-align: center;
+  font-family: "Dela Gothic One", cursive;
+}
+@media only screen and (max-width: 900px) {
+  .shopping .container .shop-inner .shop-head {
+    font-size: 5rem;
+  }
+}
+.shopping .container .shop-inner .shop-para {
+  margin: 40px auto;
+  width: 80%;
+  font-size: 1.5rem;
+  text-align: center;
+  font-family: "Chivo", sans-serif;
+}
+@media only screen and (max-width: 900px) {
+  .shopping .container .shop-inner .shop-para {
+    width: 100%;
+  }
+}
+
+.ourshop {
+  background-color: black;
+  background: radial-gradient(farthest-side at 110% 25%, #cdf300 5%, transparent 25%), radial-gradient(farthest-side at 0% 80%, #cdf300 5%, black 25%);
+}
+.ourshop .container {
+  position: relative;
+}
+.ourshop .container .our-innerdiv {
+  width: 100%;
+}
+.ourshop .container .our-innerdiv .our-heading {
+  padding: 30px;
+  margin-bottom: 0;
+  text-align: center;
+  font-size: 15rem;
+  font-family: "Dela Gothic One", cursive;
+  color: #cdf300;
+}
+.ourshop .container .our-innerdiv .our-heading span {
+  color: transparent;
+  -webkit-text-stroke: 3px #cdf300;
+}
+@media only screen and (max-width: 900px) {
+  .ourshop .container .our-innerdiv .our-heading {
+    font-size: 9rem;
+  }
+}
+.ourshop .container .our-innerdiv .row {
+  padding-bottom: 100px;
+}
+.ourshop .container .our-innerdiv .row * {
+  padding: 0;
+}
+.ourshop .container .our-innerdiv .row .card {
+  background-color: transparent;
+}
+.ourshop .container .our-innerdiv .row .card.odd {
+  float: left;
+}
+.ourshop .container .our-innerdiv .row .card.even {
+  float: right;
+  margin-top: 100px;
+}
+@media only screen and (max-width: 400px) {
+  .ourshop .container .our-innerdiv .row .card.even {
+    margin-bottom: 100px;
+  }
+}
+.ourshop .container .our-innerdiv .row .card .card-menu {
+  margin-top: 10px;
+}
+.ourshop .container .our-innerdiv .row .card .card-menu .card-title {
+  margin-top: 20px;
+  color: #ded9d2;
+  font-family: "Dela Gothic One", cursive;
+  font-size: 2rem;
+  display: inline;
+}
+.ourshop .container .our-innerdiv .row .card .card-menu .card-text {
+  font-size: 1rem;
+  color: #ded9d2;
+}
+.ourshop .container .our-innerdiv .row .card .card-menu .btn {
+  margin-top: 10px;
+  color: #cdf300;
+  border: 4px solid #cdf300;
+  padding: 10px 30px;
+  font-weight: 600;
+  border-radius: 25px;
+  float: right;
+}
+.ourshop .container .our-innerdiv .row #cardtoggle {
+  display: none;
+}
+.ourshop .container .our-innerdiv .row #cardtoggle img {
+  display: none;
+}
+.ourshop .container .our-innerdiv .row #cardtoggler {
+  display: none;
+}
+.ourshop .container .our-innerdiv .row #cardtoggler img {
+  display: none;
+}
+.ourshop .container .our-innerdiv .row #cardtoggler {
+  display: none;
+}
+.ourshop .container .our-innerdiv .row #cardtoggler img {
+  display: none;
+}
+.ourshop .container .our-innerdiv .row #cardtoggle.card {
+  display: block;
+}
+.ourshop .container .our-innerdiv .row #cardtoggle.card img {
+  display: block;
+}
+.ourshop .container .our-innerdiv .row #cardtoggler.card {
+  display: block;
+}
+.ourshop .container .our-innerdiv .row #cardtoggler.card img {
+  display: block;
+}
+.ourshop .container .our-innerdiv .load-more {
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #ded9d2;
+  background-color: transparent;
+  border: none;
+}
+.ourshop .container .our-innerdiv .load-more i {
+  font-size: 30px;
+  font-weight: 400;
+  color: #cdf300;
+  display: block;
+}
+
+.change {
+  overflow: hidden;
+  position: relative;
+  background-color: black;
+}
+.change .change-flower-top {
+  position: absolute;
+  right: -90px;
+}
+@media only screen and (max-width: 400px) {
+  .change .change-flower-top {
+    width: 200px;
+  }
+}
+.change .change-flower-bottom {
+  position: absolute;
+  width: 200px;
+  bottom: 60px;
+  left: -80px;
+}
+@media only screen and (max-width: 400px) {
+  .change .change-flower-bottom {
+    width: 150px;
+  }
+}
+.change .container .change-head {
+  padding-top: 80px;
+  font-size: 6rem;
+  color: transparent;
+  font-family: "Dela Gothic One", cursive;
+  -webkit-text-stroke: 3px #cdf300;
+}
+.change .container .row {
+  color: #ded9d2;
+  padding-bottom: 150px;
+}
+.change .container .row .col-md-5 {
+  padding-top: 100px;
+}
+.change .container .row .col-md-5 .change-para {
+  font-family: "Chivo", sans-serif;
+}
+.change .container .row .col-md-5 .change-by {
+  font-family: "Dela Gothic One", cursive;
+  font-size: 2rem;
+}
+
+.fashion .row {
+  --bs-gutter-x: 0rem;
+  height: 160vh;
+  width: 100%;
+}
+@media only screen and (max-width: 1200px) {
+  .fashion .row {
+    height: 80vh;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .fashion .row {
+    height: 100vh;
+  }
+}
+.fashion .row .fashion-col-1 {
+  background-image: url("../image/Place-Your-Image-Here-(Double-Click-to-Edit).jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 50%;
+}
+@media only screen and (max-width: 400px) {
+  .fashion .row .fashion-col-1 {
+    width: 100%;
+  }
+}
+.fashion .row .fashion-col-2 {
+  background-image: url("../image/Place-Your-Image-Here-(Double-Click-to-Edit)1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 50%;
+}
+@media only screen and (max-width: 400px) {
+  .fashion .row .fashion-col-2 {
+    width: 100%;
+  }
+}
+.fashion .row .fashion-col-3 {
+  background-image: url("../image/Place-Your-Image-Here-(Double-Click-to-Edit)2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 50%;
+}
+@media only screen and (max-width: 400px) {
+  .fashion .row .fashion-col-3 {
+    width: 100%;
+  }
+}
+.fashion .row .fashion-col-4 {
+  background-image: url("../image/Place-Your-Image-Here-(Double-Click-to-Edit)3.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 50%;
+}
+@media only screen and (max-width: 400px) {
+  .fashion .row .fashion-col-4 {
+    width: 100%;
+  }
+}
+.fashion .row .col-md-6 {
+  position: relative;
+}
+.fashion .row .col-md-6 .fashion-inner {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+@media only screen and (max-width: 400px) {
+  .fashion .row .col-md-6 .fashion-inner {
+    width: 100%;
+  }
+}
+.fashion .row .col-md-6 .fashion-inner .fashion-head {
+  color: #cdf300;
+  font-size: 2rem;
+  font-family: "Dela Gothic One", cursive;
+}
+.fashion .row .col-md-6 .fashion-inner .fashion-para {
+  color: #cdf300;
+  font-size: 1rem;
+  font-family: "Chivo", sans-serif;
+}
+.fashion .row .col-md-6 .fashion-inner .fashion-btn {
+  color: black;
+  background-color: #cdf300;
+  padding: 10px 30px;
+  border-radius: 25px;
+  font-weight: 600;
+}
+
+.designers {
+  background-color: black;
+  position: relative;
+}
+.designers::after {
+  content: "";
+  top: -10rem;
+  left: -10rem;
+  width: calc(100% + 20rem);
+  height: calc(100% + 20rem);
+  z-index: 9999;
+  position: fixed;
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/5/5c/Image_gaussian_noise_example.png);
+  opacity: 0.25;
+  pointer-events: none;
+}
+.designers .designer-inner {
+  margin: 0 auto;
+  background: radial-gradient(circle at top, #cdf300 -30%, black 35%);
+  overflow: hidden;
+}
+.designers .designer-inner .design-head {
+  text-align: center;
+  -webkit-text-stroke: 5px #cdf300;
+  color: transparent;
+  font-size: 16rem;
+  font-family: "Dela Gothic One", cursive;
+  margin-bottom: 30px;
+  padding-top: 30px;
+}
+@media only screen and (max-width: 900px) {
+  .designers .designer-inner .design-head {
+    font-size: 10rem;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .designers .designer-inner .design-head {
+    font-size: 6rem;
+  }
+}
+.designers .designer-inner .design-para {
+  padding-top: 50px;
+  color: #ded9d2;
+  font-family: "Dela Gothic One", cursive;
+  font-size: 2.5rem;
+  padding-bottom: 150px;
+}
+@media only screen and (max-width: 900px) {
+  .designers .designer-inner .design-para {
+    font-size: 1.2rem;
+  }
+}
+.designers .designer-inner .design-para .design-leftpara {
+  text-align: left;
+}
+.designers .designer-inner .design-para .design-rightpara {
+  text-align: right;
+}
+.designers .designer-inner .design-btn {
+  margin: 0 auto;
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  bottom: 80px;
+  transform: translateX(-50%);
+  padding: 10px 30px;
+  border-radius: 25px;
+  border: 3px solid #cdf300;
+  color: #cdf300;
+  background-color: transparent;
+  font-size: 1rem;
+}
+
+.join {
+  position: relative;
+  background-color: #cdf300;
+  overflow: hidden;
+}
+.join .join-brush {
+  position: absolute;
+  top: 100px;
+  left: -150px;
+  width: 30%;
+  transform: rotate(180deg);
+}
+.join .join-left {
+  position: relative;
+}
+@media only screen and (max-width: 400px) {
+  .join .join-left {
+    position: relative;
+    width: 100%;
+    height: 50vh;
+  }
+}
+.join .join-left .join-inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.join .join-left .join-inner .input-group {
+  color: black;
+  width: 70%;
+  margin: 20px auto;
+  border: 2px solid black;
+  font-family: "Chivo", sans-serif;
+}
+@media only screen and (max-width: 900px) {
+  .join .join-left .join-inner .input-group {
+    width: 100%;
+  }
+}
+.join .join-left .join-inner .input-group .join-input {
+  line-height: 2.5rem;
+  background-color: #cdf300;
+  border-color: transparent;
+  font-size: 1rem;
+  color: black;
+  width: 85%;
+}
+.join .join-left .join-inner .input-group .btn i {
+  font-size: 2rem;
+}
+.join .join-left .join-inner .join-head {
+  font-size: 6rem;
+  color: black;
+  font-family: "Dela Gothic One", cursive;
+  text-align: center;
+}
+@media only screen and (max-width: 900px) {
+  .join .join-left .join-inner .join-head {
+    font-size: 4rem;
+  }
+}
+.join .join-left .join-inner .join-para {
+  width: 60%;
+  margin: 20px auto;
+  text-align: center;
+  font-family: "Chivo", sans-serif;
+}
+@media only screen and (max-width: 900px) {
+  .join .join-left .join-inner .join-para {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .join .join-right {
+    display: none;
+  }
+}
+.join .join-right img {
+  width: 100%;
+}
+
+footer {
+  background-color: black;
+}
+footer .footer-inner {
+  margin: 0 auto;
+  background: radial-gradient(circle at bottom, #cdf300 -20%, black 45%);
+  padding: 100px 0;
+}
+footer .footer-inner .row .col-md-3 h4 {
+  font-size: 2rem;
+  font-family: "Dela Gothic One", cursive;
+  color: #cdf300;
+}
+@media only screen and (max-width: 900px) {
+  footer .footer-inner .row .col-md-3 h4 {
+    font-size: 1.5rem;
+  }
+}
+@media only screen and (max-width: 767px) {
+  footer .footer-inner .row .col-md-3 h4 {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+}
+footer .footer-inner .row .col-md-3 ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+@media only screen and (max-width: 767px) {
+  footer .footer-inner .row .col-md-3 ul li {
+    font-size: 2rem;
+    text-align: center;
+  }
+}
+footer .footer-inner .row .col-md-3 ul li a {
+  text-decoration: none;
+  color: #ded9d2;
+}
+footer .footer-inner .copyright-para {
+  color: #cdf300;
+  margin-bottom: 0;
+  margin-top: 30px;
+  font-family: "Dela Gothic One", cursive;
+}
+@media only screen and (max-width: 767px) {
+  footer .footer-inner .copyright-para {
+    font-size: 2rem;
+    text-align: center;
+  }
+}/*# sourceMappingURL=style.css.map */
